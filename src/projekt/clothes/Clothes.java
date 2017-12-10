@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Clothes {
+	
 	private int id, quantity, price;
 	
-	private String color, material, size, style;
+	private String color, material, style;
 
 	Clothes(){
 		this.color = "undefined";
 		this.material = "undefined";
-		this.size = "undefined";
 		this.style = "undefined";
 		this.quantity = 0;
 		this.price = 0;
@@ -44,23 +44,6 @@ public class Clothes {
 		this.style = style;
 	}
 	
-	void setSize(String size) {
-		this.size  = size;
-	}
-	
-	void setSize(int cm) {
-		if(cm <= 20)
-			this.size = "XS";
-		if(cm > 20 && cm <= 40)
-			this.size = "S";
-		if(cm > 40 && cm <= 65)
-			this.size = "M";
-		if(cm > 65 && cm <= 80)
-			this.size = "L";
-		if(cm > 80)
-			this.size = "XL";
-	}
-	
 	void setPrice() {
 		int p = 0;
 		String material = this.material;
@@ -78,10 +61,6 @@ public class Clothes {
 		}
 		
 		this.price = this.quantity * p;
-	}
-	
-	String getSize() {
-		return this.size;
 	}
 	
 	int getPrice() {
