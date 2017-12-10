@@ -11,64 +11,56 @@ public class Main {
 		
 		System.out.println("Your name: ");
 		String name = sc.nextLine();
-		System.out.println("Street: ");
+		System.out.println("Yor address - street: ");
 		String address = sc.nextLine();
 		System.out.println("Number: ");
 		int number = sc.nextInt();
+		String help = sc.nextLine();
 		
 		Address ad = new Address(address, number);
 		Client cl = new Client(name, ad);
 		
-		Scanner inp = new Scanner(System.in);
-		Scanner txt = new Scanner(System.in);
-		
 		System.out.println("Enter 'shirt', 't-shirt', 'jacket' or 'coat': ");
-		String style = inp.next();
+		String style = sc.nextLine();
 		
 		do {
 			System.out.println("How many " + style + "s would you like to order?");
-			int num = inp.nextInt();
+			int num = sc.nextInt();
+			String help2 = sc.nextLine();
 			
 			System.out.println("Set the color: ");
-			String color = inp.next();
+			String color = sc.nextLine();
 			
 			System.out.println("Choose from materials (wool, denim, cotton, leather): ");
-			String material = inp.next();
+			String material = sc.nextLine();
+			
+			Clothes c;
 			
 			switch (style) {
-            case "shirt":	Shirt sh = new Shirt(num, material, color, style);
-            				sh.setPrice();
-            				cl.c.add(sh);
+            case "shirt":	c = new Shirt(num, material, color, style);
             				break;
-            case "jacket":	Jacket ja = new Jacket(num, material, color, style);
-            				ja.setPrice();
-            				cl.c.add(ja);
+            case "jacket":	c = new Jacket(num, material, color, style);
 							break;
-            case "coat":	Coat co = new Coat(num, material, color, style);
-            				co.setPrice();
-            				cl.c.add(co);
+            case "coat":	c = new Coat(num, material, color, style);
 							break;
-            case "t-shirt":	TShirt ts = new TShirt(num, material, color, style);
-							ts.setPrice();
-							cl.c.add(ts);
+            case "t-shirt":	c = new TShirt(num, material, color, style);
 							break;
-            default:		System.out.println("Incorrect");
+            default:		c = new Clothes(num, material, color, style);
+            				System.out.println("Incorrect");
             				break;
 			}
 			
+			c.setPrice();
+			cl.c.add(c);
+			
 			System.out.println("Press 'x' to finish your order or choose from 'shirt', 't-shirt', 'jacket' and 'coat' again:");
-			style = inp.next();
+			style = sc.nextLine();
             
 		} while(!style.equals("x"));
-		
-		txt.close();
-		inp.close();
+
 		sc.close();
 
 		cl.printOrder();
-		System.out.println(cl.name + ", your order will be shipped to " + cl.address);
-		
-
 	}
 
 }
