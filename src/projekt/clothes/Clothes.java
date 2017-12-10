@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Clothes {
-	
 	private int id, quantity, price;
-	
 	private String color, material, style;
 
 	Clothes(){

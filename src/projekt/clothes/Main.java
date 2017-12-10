@@ -15,10 +15,10 @@ public class Main {
 		String address = sc.nextLine();
 		System.out.println("Number: ");
 		int number = sc.nextInt();
-		String help = sc.nextLine();
+		String help1 = sc.nextLine();
 		
-		Address ad = new Address(address, number);
-		Client cl = new Client(name, ad);
+		Address full_address = new Address(address, number);
+		Client cl = new Client(name, full_address);
 		
 		System.out.println("Enter 'shirt', 't-shirt', 'jacket' or 'coat': ");
 		String style = sc.nextLine();
@@ -51,7 +51,7 @@ public class Main {
 			}
 			
 			c.setPrice();
-			cl.c.add(c);
+			cl.clothes.add(c);
 			
 			System.out.println("Press 'x' to finish your order or choose from 'shirt', 't-shirt', 'jacket' and 'coat' again:");
 			style = sc.nextLine();

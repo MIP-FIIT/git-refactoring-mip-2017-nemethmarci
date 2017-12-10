@@ -4,12 +4,9 @@ import java.util.ArrayList;
 
 public class Client {
 	public String name;
-	
+	public int price = 0;
 	Address address;
-	
-	public int p = 0;
-	
-	final ArrayList <Clothes>c = new ArrayList<Clothes>();
+	final ArrayList <Clothes>clothes = new ArrayList<Clothes>();
 
 	Client(){
 		this.name = "unknown";
@@ -23,13 +20,12 @@ public class Client {
 	void printOrder() {
 		System.out.println("You ordered: ");
 		
-		for(int i = 0; i<c.size(); i++) {
-			System.out.println(c.get(i).getQuantity() + " " + c.get(i).getStyle() + "s for " + c.get(i).getPrice() + "€");
-			this.p += c.get(i).getPrice();
+		for(int i = 0; i<clothes.size(); i++) {
+			System.out.println(clothes.get(i).getQuantity() + " " + clothes.get(i).getStyle() + "s for " + clothes.get(i).getPrice() + "€");
+			this.price += clothes.get(i).getPrice();
 		}
 		
-		System.out.println("The price is: " + p + "€");
-		
+		System.out.println("The price is: " + price + "€");
 		System.out.println("Thank you " + this.name + ", your order will be shipped to " + this.address.getStreet() + " - " + this.address.getZIP());
 	}
 }
