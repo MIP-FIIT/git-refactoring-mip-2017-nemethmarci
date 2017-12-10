@@ -19,7 +19,7 @@ public class Main {
 		Scanner inp = new Scanner(System.in);
 		Scanner txt = new Scanner(System.in);
 		
-		System.out.println("Enter 'shirt', 'jacket' or 'coat': ");
+		System.out.println("Enter 'shirt', 't-shirt', 'jacket' or 'coat': ");
 		String style = inp.next();
 		
 		do {
@@ -44,6 +44,10 @@ public class Main {
             case "coat":	Coat co = new Coat(num, material, color);
             				co.setPrice();
             				cl.c.add(co);
+							break;
+            case "t-shirt":	TShirt ts = new TShirt(num, material, color);
+							ts.setPrice();
+							cl.t.add(ts);
 							break;
             default:		System.out.println("Incorrect");
             				break;

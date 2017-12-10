@@ -8,6 +8,7 @@ public class Client {
 	final ArrayList <Shirt>s = new ArrayList<Shirt>();
 	final ArrayList <Coat>c = new ArrayList<Coat>();
 	final ArrayList <Jacket>j = new ArrayList<Jacket>();
+	final ArrayList <TShirt>t = new ArrayList<TShirt>();
 
 	Client(){
 		this.name = "unknown";
