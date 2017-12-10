@@ -6,17 +6,19 @@ import java.util.Scanner;
 public class Clothes {
 	private int id, quantity, price;
 	
-	private String color, material, size;
+	private String color, material, size, style;
 
 	Clothes(){
 		this.color = "undefined";
 		this.material = "undefined";
 		this.size = "undefined";
+		this.style = "undefined";
 		this.quantity = 0;
 		this.price = 0;
 	}
 	
-	Clothes(int quantity, String color, String material){
+	Clothes(int quantity, String color, String material, String style){
+		this.style = style;
 		this.quantity = quantity;
 		this.color = color;
 		this.material = material;
@@ -38,6 +40,9 @@ public class Clothes {
 		this.quantity = quantity;
 	}
 	
+	void setStyle(String style) {
+		this.style = style;
+	}
 	
 	void setSize(String size) {
 		this.size  = size;
@@ -93,5 +98,9 @@ public class Clothes {
 	
 	int getQuantity() {
 		return this.quantity;
+	}
+	
+	String getStyle() {
+		return this.style;
 	}
 }

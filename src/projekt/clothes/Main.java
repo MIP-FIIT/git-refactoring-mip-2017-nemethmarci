@@ -33,21 +33,21 @@ public class Main {
 			String material = inp.next();
 			
 			switch (style) {
-            case "shirt":	Shirt sh = new Shirt(num, material, color);
+            case "shirt":	Shirt sh = new Shirt(num, material, color, style);
             				sh.setPrice();
-            				cl.s.add(sh);
+            				cl.c.add(sh);
             				break;
-            case "jacket":	Jacket ja = new Jacket(num, material, color);
+            case "jacket":	Jacket ja = new Jacket(num, material, color, style);
             				ja.setPrice();
-            				cl.j.add(ja);
+            				cl.c.add(ja);
 							break;
-            case "coat":	Coat co = new Coat(num, material, color);
+            case "coat":	Coat co = new Coat(num, material, color, style);
             				co.setPrice();
             				cl.c.add(co);
 							break;
-            case "t-shirt":	TShirt ts = new TShirt(num, material, color);
+            case "t-shirt":	TShirt ts = new TShirt(num, material, color, style);
 							ts.setPrice();
-							cl.t.add(ts);
+							cl.c.add(ts);
 							break;
             default:		System.out.println("Incorrect");
             				break;
