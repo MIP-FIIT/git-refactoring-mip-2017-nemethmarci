@@ -3,7 +3,9 @@ package projekt.clothes;
 import java.util.ArrayList;
 
 public class Client {
-	public String name, address;
+	public String name;
+	
+	Address address;
 	
 	public int p = 0;
 	
@@ -13,7 +15,7 @@ public class Client {
 		this.name = "unknown";
 	}
 	
-	Client(String name, String address){
+	Client(String name, Address address){
 		this.name = name;
 		this.address = address;
 	}
@@ -28,6 +30,6 @@ public class Client {
 		
 		System.out.println("The price is: " + p + "€");
 		
-		System.out.println("Thank you " + this.name + ", your order will be shipped to " + this.address);
+		System.out.println("Thank you " + this.name + ", your order will be shipped to " + this.address.getStreet() + " - " + this.address.getZIP());
 	}
 }
