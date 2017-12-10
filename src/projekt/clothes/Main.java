@@ -11,10 +11,13 @@ public class Main {
 		
 		System.out.println("Your name: ");
 		String name = sc.nextLine();
-		System.out.println("Pleease enter your address ");
+		System.out.println("Street: ");
 		String address = sc.nextLine();
-
-		Client cl = new Client(name, address);
+		System.out.println("Number: ");
+		int number = sc.nextInt();
+		
+		Address ad = new Address(address, number);
+		Client cl = new Client(name, ad);
 		
 		Scanner inp = new Scanner(System.in);
 		Scanner txt = new Scanner(System.in);
