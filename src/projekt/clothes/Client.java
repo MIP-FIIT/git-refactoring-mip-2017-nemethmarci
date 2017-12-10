@@ -25,18 +25,18 @@ public class Client {
 		int p = 0;
 		
 		for(int i = 0; i<c.size(); i++) {
-			System.out.println(c.get(i).quantity + " " + c.get(i).color + " coats for " + c.get(i).price + "€");
-			p += c.get(i).price;
+			System.out.println(c.get(i).getQuantity() + " " + c.get(i).getColor() + " coats for " + c.get(i).getPrice() + "€");
+			p += c.get(i).getPrice();
 		}
 		
 		for(int i = 0; i<s.size(); i++) {
-			System.out.println(s.get(i).quantity + " " + s.get(i).color + " coats for " + s.get(i).price + "€");
-			p += s.get(i).price;
+			System.out.println(s.get(i).getQuantity() + " " + s.get(i).getColor() + " shirts for " + s.get(i).getPrice() + "€");
+			p += s.get(i).getPrice();
 		}
 		
 		for(int i = 0; i<j.size(); i++) {
-			System.out.println(j.get(i).quantity + " " + j.get(i).color + " coats for " + j.get(i).price + "€");
-			p += j.get(i).price;
+			System.out.println(j.get(i).getQuantity() + " " + j.get(i).getColor() + " jackets for " + j.get(i).getPrice() + "€");
+			p += j.get(i).getPrice();
 		}
 		
 		System.out.println("The price is: " + p);

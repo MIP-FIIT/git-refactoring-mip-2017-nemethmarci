@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Clothes {
-	public int id, quantity, price;
+	private int id, quantity, price;
 	
-	public String color, material, size;
+	private String color, material, size;
 
 	Clothes(){
 		this.color = "undefined";
@@ -22,8 +22,38 @@ public class Clothes {
 		this.material = material;
 	}
 	
+	void setPrice(int price) {
+		this.price = price;
+	}
+	
+	void setMaterial(String material) {
+		this.material = material;
+	}
+	
+	void setColor(String color) {
+		this.color = color;
+	}
+	
+	void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	
+	
 	void setSize(String size) {
 		this.size  = size;
+	}
+	
+	void setSize(int cm) {
+		if(cm <= 20)
+			this.size = "XS";
+		if(cm > 20 && cm <= 40)
+			this.size = "S";
+		if(cm > 40 && cm <= 65)
+			this.size = "M";
+		if(cm > 65 && cm <= 80)
+			this.size = "L";
+		if(cm > 80)
+			this.size = "XL";
 	}
 	
 	void setPrice() {
@@ -45,4 +75,23 @@ public class Clothes {
 		this.price = this.quantity * p;
 	}
 	
+	String getSize() {
+		return this.size;
+	}
+	
+	int getPrice() {
+		return this.price;
+	}
+	
+	String getMaterial() {
+		return this.material;
+	}
+	
+	String getColor() {
+		return this.color;
+	}
+	
+	int getQuantity() {
+		return this.quantity;
+	}
 }
