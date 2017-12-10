@@ -22,6 +22,7 @@ public class Main {
 		System.out.println("Enter 'shirt', 'jacket' or 'coat': ");
 		String style = inp.next();
 		
+		do {
 			System.out.println("How many " + style + "s would you like to order?");
 			int num = inp.nextInt();
 			
@@ -47,6 +48,11 @@ public class Main {
             default:		System.out.println("Incorrect");
             				break;
 			}
+			
+			System.out.println("Press 'x' to finish your order or choose from 'shirt', 't-shirt', 'jacket' and 'coat' again:");
+			style = inp.next();
+            
+		} while(!style.equals("x"));
 		
 		txt.close();
 		inp.close();
